@@ -1,0 +1,95 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: 
+    linear-gradient(rgba(255, 87, 34, 0.6), rgba(255, 87, 34, 0.6)),
+    url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1i6WTbARDV1NKvkAfirmPUvdszbCxyv3Y4A&s') no-repeat center center / cover;
+  background-attachment: fixed;
+  color: #fff;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* Header */
+.device-header {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.device-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.device-header p {
+  font-size: 1.1rem;
+  color: #f0f0f0;
+}
+
+/* Cards */
+.device-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.device-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 24px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+.device-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Fake Buttons */
+.fake-button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  background-color: #fff;
+  color: #d9643a;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: default;
+  transition: transform 0.3s ease;
+}
+
+.fake-button:hover {
+  transform: scale(1.05);
+  background-color: #ffe0d1;
+}
+
+/* Thermostat controls */
+.temp-controls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+/* Add New Device */
+.add-device-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px dashed #fff;
+  color: #fff;
+}

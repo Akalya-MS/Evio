@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Evio Login</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>🔐 Welcome Back to <span class="highlight">Evio</span></h2>
+    <form id="loginForm">
+      <input type="email" name="email" placeholder="📧 Email" required />
+      <input type="password" name="password" placeholder="🔑 Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <p id="login-message" style="margin-top: 10px;"></p>
+    <p class="footer-note">🌿 Smarter energy starts here.</p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("loginForm");
+      const message = document.getElementById("login-message");
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch("connect.php", {
+            method: "POST",
+            body: formData,
+          });
+
+          const text = await response.text();
+          if (text.trim() === "success") {
+            message.textContent = "Login Successful!";
+            message.style.color = "#4caf50";
+
+            setTimeout(() => {
+              window.location.href = "feature.html"; // Redirect after login
+            }, 1500);
+          } else {
+            message.textContent = text;
+            message.style.color = "#f44336";
+          }
+        } catch (error) {
+          message.textContent = "Server error. Please try again.";
+          message.style.color = "#f44336";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

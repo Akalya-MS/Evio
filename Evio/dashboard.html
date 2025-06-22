@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Evio | Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>🔆 Evio Dashboard</h1>
+    <p>Live overview of energy performance and optimization metrics</p>
+  </header>
+
+  <main class="dashboard-grid">
+    <div class="card big">
+      <h2>Total Usage (kWh)</h2>
+      <p class="metric">89,630</p>
+      <span class="subtext">Compared to last month: <span class="down">▼ 1.3%</span></span>
+    </div>
+
+    <div class="card">
+      <h2>Solar Panel Events</h2>
+      <canvas id="solarEventsChart"></canvas>
+    </div>
+
+    <div class="card">
+      <h2>Grid Power Usage</h2>
+      <canvas id="gridUsageChart"></canvas>
+    </div>
+
+    <div class="card">
+      <h2>Solar Output per Day</h2>
+      <p class="metric">172 kWh</p>
+      <span class="subtext">Peak: Nov 1</span>
+    </div>
+
+    <div class="card">
+      <h2>Power Sources</h2>
+      <canvas id="powerSourcePie"></canvas>
+    </div>
+
+    <div class="card">
+      <h2>Energy Efficiency</h2>
+      <p class="metric">500.00%</p>
+      <span class="subtext">Avg. based on AI optimization</span>
+    </div>
+
+    <div class="card">
+      <h2>Avg. Usage Time</h2>
+      <p class="metric">2d 14h 59m</p>
+    </div>
+
+    <div class="card">
+      <h2>Device Energy Use</h2>
+      <ul>
+        <li>Water Heater – <strong>214 kWh</strong></li>
+        <li>AC – <strong>189 kWh</strong></li>
+        <li>Lights – <strong>132 kWh</strong></li>
+      </ul>
+    </div>
+  </main>
+
+  <script>
+    // Chart: Solar Events
+    new Chart(document.getElementById('solarEventsChart'), {
+      type: 'line',
+      data: {
+        labels: ["Oct 25", "Oct 26", "Oct 27", "Oct 28", "Oct 29", "Oct 30", "Oct 31"],
+        datasets: [{
+          label: 'Events',
+          data: [100, 120, 140, 180, 160, 175, 200],
+          borderColor: '#fff',
+          fill: false,
+          tension: 0.3
+        }]
+      },
+      options: { responsive: true, plugins: { legend: { display: false } } }
+    });
+
+    // Chart: Grid Power Usage
+    new Chart(document.getElementById('gridUsageChart'), {
+      type: 'line',
+      data: {
+        labels: ["Oct 25", "Oct 26", "Oct 27", "Oct 28", "Oct 29", "Oct 30", "Oct 31"],
+        datasets: [{
+          label: 'Grid Usage',
+          data: [90, 95, 85, 105, 99, 98, 110],
+          borderColor: '#F9A03F',
+          backgroundColor: 'rgba(255,255,255,0.1)',
+          fill: true,
+          tension: 0.4
+        }]
+      },
+      options: { responsive: true, plugins: { legend: { display: false } } }
+    });
+
+    // Chart: Power Source Pie
+    new Chart(document.getElementById('powerSourcePie'), {
+      type: 'doughnut',
+      data: {
+        labels: ["Solar", "Grid", "Battery"],
+        datasets: [{
+          data: [60, 30, 10],
+          backgroundColor: ['#FF6F3C', '#F9A03F', '#FFD580'],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        cutout: '60%',
+        plugins: { legend: { position: 'bottom' } }
+      }
+    });
+  </script>
+</body>
+</html>

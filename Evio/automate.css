@@ -1,0 +1,123 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+  min-height: 100vh;
+  background: 
+    linear-gradient(rgba(255, 138, 101, 0.4), rgba(255, 138, 101, 0.4)),
+    url('https://cdn.jswonehomes.com/trending_technologies_in_home_automation_5bf46fced3/trending_technologies_in_home_automation_5bf46fced3.jpeg') 
+    no-repeat center center / cover;
+  background-attachment: fixed;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Header */
+.auto-header {
+  text-align: center;
+  padding: 60px 20px 20px;
+  color: #e3f2fd;
+}
+
+.auto-header h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #ffffff; /* Pure white */
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.8),
+    1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.auto-header p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #e0f7fa;
+}
+
+/* Rule Section */
+.rule-section {
+  width: 90%;
+  max-width: 700px;
+  margin-top: 30px;
+  background: rgba(33, 150, 243, 0.2);
+  padding: 24px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Form Inputs */
+.rule-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rule-form input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #212121;
+  box-shadow: inset 1px 1px 4px rgba(0,0,0,0.1);
+}
+
+.rule-form button {
+  background-color: #1565c0;
+  color: #fff;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rule-form button:hover {
+  background-color: #0d47a1;
+}
+
+/* Rules Display */
+.rules-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rule-card {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideIn 0.6s ease forwards;
+}
+
+.rule-condition,
+.rule-action {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+/* Animation */
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

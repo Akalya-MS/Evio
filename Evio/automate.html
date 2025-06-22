@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Automatic Control | Evio</title>
+  <link rel="stylesheet" href="automate.css" />
+</head>
+<body>
+  <header class="auto-header">
+    <h1>Automatic Control</h1>
+    <p>Create intelligent automation rules for your energy usage.</p>
+  </header>
+
+  <section class="rule-section">
+    <form id="ruleForm" class="rule-form">
+      <input type="text" id="conditionInput" placeholder="Enter condition (e.g. Presence detected)" required />
+      <input type="text" id="actionInput" placeholder="Enter action (e.g. Turn off lights)" required />
+      <button type="submit">Add Rule</button>
+    </form>
+
+    <div id="customRules" class="rules-container">
+      <div class="rule-card">
+        <div class="rule-condition">If <strong>I'm away from home</strong>,</div>
+        <div class="rule-action">then <strong>turn off all devices</strong>.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-condition">If <strong>it's 6 AM</strong>,</div>
+        <div class="rule-action">then <strong>preheat water</strong>.</div>
+      </div>
+    </div>
+  </section>
+
+  <script src="automate.js"></script>
+</body>
+</html>

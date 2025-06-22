@@ -1,0 +1,136 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #FAF7F4;
+  color: #2B2B2B;
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(250, 247, 244, 0.8);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 2.2rem; /* Bigger logo */
+  font-weight: bold;
+  color: #D9643A;
+  letter-spacing: 1px;
+}
+
+.login-btn {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #C1442E;
+  border: 2px solid #C1442E;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #C1442E;
+  color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url('https://energy.mit.edu/wp-content/uploads/2022/07/Option-2_1000x667.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  color: #F2F2F2;
+  animation: slideUp 1.5s ease forwards;
+  opacity: 0;
+}
+
+/* Hero Text Animation */
+.animate-text {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #F1D3B3;
+  animation: fadeIn 2.5s ease forwards;
+  margin-bottom: 20px;
+  opacity: 0;
+}
+
+.animate-subtext {
+  font-size: 1.2rem;
+  color: #FAF7F4;
+  margin-bottom: 30px;
+  animation: fadeIn 3s ease forwards;
+  opacity: 0;
+}
+
+.cta-button {
+  background-color: #D9643A;
+  color: #fff;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #C1442E;
+}
+
+.signup-link {
+  color: #F9D8C4;
+  text-decoration: underline;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.signup-link:hover {
+  color: #fff;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
